@@ -137,6 +137,16 @@ static CDVWKInAppBrowser* instance = nil;
             self.inAppBrowserViewController.webView.configuration.processPool = [[WKProcessPool alloc] init]; // create new process pool to flush all data
         }];
     }
+
+    if (browserOptions.cleardiskcache) {
+        
+      NSSet *dataTypes = [NSSet setWithArray:@[WKWebsiteDataTypeDiskCache]];
+      NSDate* dateFrom = [NSDate dateWithTimeIntervalSince1970:0];
+      [dataStore removeDataOfTypes:dataTypes modifiedSince:dateFrom completionHandler:^{
+        NSLog(@"Removed WKWebView DiskCache");
+          self.inAppBrowserViewController.webView.configuration.processPool = [[WKProcessPool alloc] init];
+        }]; 
+    }
     
     if (browserOptions.clearcache) {
         bool isAtLeastiOS11 = false;

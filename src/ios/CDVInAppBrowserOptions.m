@@ -32,6 +32,7 @@
         self.cleardata = NO;
         self.clearcache = NO;
         self.clearsessioncache = NO;
+        self.cleardiskcache = NO;
         self.hidespinner = NO;
 
         self.enableviewportscale = NO;

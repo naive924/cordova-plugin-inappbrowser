@@ -33,6 +33,7 @@
 @property (nonatomic, assign) BOOL cleardata;
 @property (nonatomic, assign) BOOL clearcache;
 @property (nonatomic, assign) BOOL clearsessioncache;
+@property (nonatomic, assign) BOOL cleardiskcache;
 @property (nonatomic, assign) BOOL hidespinner;
 
 @property (nonatomic, copy) NSString* presentationstyle;
